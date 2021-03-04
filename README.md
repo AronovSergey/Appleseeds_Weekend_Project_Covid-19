@@ -3,8 +3,8 @@
 * Go over exercises - 30min
 * Download and install postman - 20min
 * Create a new github repository - 20min
-* Read the documentation on countries' api - 20min
-* Read the documentation on covid' api - 30min
+* Read the documentation of countries' api - 20min
+* Read the documentation of covid' api - 30min
 * Read the documentation on graphs library - 45min
 ## Encoding
 * Exploration of the countries api, and creation of an object that transfers a country to a region - 40min
