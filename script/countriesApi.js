@@ -26,6 +26,8 @@ async function getAllCountries() {
     });   
 
     regions.all = [];
+
+    loadingDone();
 }
 
 

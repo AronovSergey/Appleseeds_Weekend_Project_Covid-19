@@ -15,7 +15,9 @@ const totalRecovered = document.querySelector('.country-info__total-recovered').
 const criticalCondition = document.querySelector('.country-info__in-critical-condition').lastElementChild;
 // chart.js
 const graph = document.querySelector('.graph');
-const ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.querySelector('#myChart').getContext('2d');
+// spinner
+const spinner = document.querySelector('.spinner');
 
 
 /*---------------------------
@@ -56,6 +58,8 @@ async function regionButtonHandler() {
 async function fetchRegionInfo(region) {
     isFetched[region] = true;
 
+    loading();
+
     const newRegion = [];
     for(let i = 0; i < regions[region].length; i++){
         const url = `${covidBaseEndpoint}/${regions[region][i].code}`;
@@ -77,6 +81,8 @@ async function fetchRegionInfo(region) {
     };
 
     regions[region] = newRegion;
+
+    loadingDone();
 };
 
 function createCountriesSection (region) {
@@ -196,3 +202,20 @@ function removeElement(element) {
 function displayElement(element) {
     element.classList.remove('display-none');
 };
+
+function loading() {
+    displayElement(spinner);
+
+    for (let i = 0; i < regionsButtons.length; i++){
+        regionsButtons[i].disabled = true;
+    }
+
+}
+
+function loadingDone() {
+    removeElement(spinner);
+
+    for (let i = 0; i < regionsButtons.length; i++){
+        regionsButtons[i].disabled = false;
+    }
+}

@@ -6,11 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/loading.css">
     <title>Covid 19 API</title>
 </head>
 <body>
     <main class="flex">
         <h1 class="title display-none">israel</h1>
+
+        <div class="spinner">
+            <div class="box">
+                <div class="body ">
+                    <div class="details">
+                        <div class="r-detail"></div>
+                        <div class="m-detail"></div>
+                        <div class="mm-detail"></div>
+                        <div class="l-detail"></div>
+                    </div>
+                    <div class="shapes">
+                        <div class="b-shape"></div>
+                        <div class="t-shape"></div>
+                        <div class="rb-shape"></div>
+                        <div class="tm-shape"></div>
+                        <div class="lm-shape"></div>
+                        <div class="rm-shape"></div>
+                        <div class="bm-shape"></div>
+                        <div class="lt-shape"></div>
+                    </div>
+                    <div class="sm-details">
+                        <div class="r-detail"></div>
+                        <div class="m-detail"></div>
+                        <div class="mm-detail"></div>
+                        <div class="l-detail"></div>
+                    </div>
+                    <div class="sm-shapes">
+                        <div class="b-shape"></div>
+                        <div class="t-shape"></div>
+                        <div class="rb-shape"></div>
+                        <div class="tm-shape"></div>
+                        <div class="lm-shape"></div>
+                        <div class="rm-shape"></div>
+                        <div class="bm-shape"></div>
+                        <div class="lt-shape"></div>
+                    </div>
+                </div>
+                <div class="centered">
+                    <div class="text">
+                        COVID-19
+                    </div>
+                </div>
+                <div class="message">
+                    Please wait...
+                </div>
+            </div>
+        </div>
+
 
         <div class="graph display-none">
             <canvas id="myChart"></canvas>
@@ -50,12 +99,12 @@
         </div>
 
         <div class="flex container regions">
-            <button>Europe</button>
-            <button>Africa</button>
-            <button>Americas</button>
-            <button>Asia</button>
-            <button>Oceania</button>
-            <button>All Countries</button>
+            <button disabled>Europe</button>
+            <button disabled>Africa</button>
+            <button disabled>Americas</button>
+            <button disabled>Asia</button>
+            <button disabled>Oceania</button>
+            <button disabled>All Countries</button>
         </div>
     
         <div class="flex container listOfCountries">
