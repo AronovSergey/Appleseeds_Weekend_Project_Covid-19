@@ -153,6 +153,7 @@ function drawGraph(){
 
 function fillGraph(region) {
     labels = [];
+    datasets = [];
     datasets = [
         newDataset('Confirmed Cases', 'rgba(255, 0, 0, 0.5)'),
         newDataset('Number Of Deaths', 'rgba(0, 0, 0, 0.5)'),
