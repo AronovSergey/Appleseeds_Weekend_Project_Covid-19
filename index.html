@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/loading.css">
     <title>Covid 19 API</title>
@@ -60,7 +61,6 @@
             </div>
         </div>
 
-
         <div class="graph display-none">
             <canvas id="myChart"></canvas>
         </div>
@@ -110,6 +110,17 @@
         <div class="flex container listOfCountries">
         </div>
     </main>
+
+    <footer class="footer flex bg-dark">
+        <div class="github flex">
+            <p>GitHub Project Repository</p>
+            <a href="https://github.com/AronovSergey/Covid-19-API" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+        </div>
+        <div class="copyright flex">
+            <p>Copyright &copy; 2021 - Sergey Aronov</p>
+            <a href="https://www.linkedin.com/in/sergey-aronov-61a93a16a/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>     
+    </footer>
 
     <script src="./script/countriesApi.js"></script>
     <script src="./script/index.js"></script>

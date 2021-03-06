@@ -111,6 +111,8 @@ function countryButtonHandler() {
 
     removeElement(graph);
     displayElement(countryInfo);
+
+    window.scrollTo(0, 0);
 };
 
 async function allCountriesHandler() {

@@ -110,3 +110,25 @@ main .graph {
     height: auto;
     margin-bottom: 40px;
 }
+
+
+/* Footer */
+.footer {
+    flex-direction: column;
+    height: 200px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.footer  a {
+    margin: 15px 30px;
+    color: #777;
+}
+
+.footer .github a:hover {
+    color: #1d202d;
+}
+
+.footer .copyright a:hover {
+    color: #2867B2;
+}
