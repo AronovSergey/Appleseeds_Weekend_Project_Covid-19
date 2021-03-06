@@ -101,6 +101,6 @@ main .listOfCountries *:hover {
 /* Graph */
 main .graph {
     width: 90vw;
-    height: 60vh;
-    margin-bottom: 10vh;
+    height: auto;
+    margin-bottom: 40px;
 }

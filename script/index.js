@@ -33,6 +33,7 @@ const isFetched = {
 for(let i = 0; i < regionsButtons.length - 1; i++){
     regionsButtons[i].addEventListener('click', regionButtonHandler);
 };
+regionsButtons[regionsButtons.length - 1].addEventListener('click', allCountriesHandler);
 
 async function regionButtonHandler() {
     const regionName = this.textContent;
@@ -49,9 +50,7 @@ async function regionButtonHandler() {
 
     drawGraph();
 
-
     createCountriesSection(regionName);
-
 };
 
 async function fetchRegionInfo(region) {
@@ -108,9 +107,26 @@ function countryButtonHandler() {
     displayElement(countryInfo);
 };
 
-function allCountriesHandler() {
+async function allCountriesHandler() {
+    const regionsNames = ['Europe', 'Africa', 'Americas', 'Asia', 'Oceania'];
+    for (let i = 0; i < regionsNames.length; i++){
+        if(!isFetched[regionsNames[i]])
+            await fetchRegionInfo(regionsNames[i]);
+        regions.all = regions.all.concat(regions[regionsNames[i]]);
+    };
     
-}
+    title.textContent = 'All Countries';
+
+    displayElement(title);
+    removeElement(countryInfo);
+
+    fillGraph('all');
+
+    drawGraph();
+
+
+    createCountriesSection('all');
+};
 
 
 /*----------------------------
