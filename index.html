@@ -4,10 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
     <title>Covid 19 API</title>
 </head>
 <body>
+    <main class="flex">
+        <h1 class="title display-none">israel</h1>
+        <div class="flex container country-info display-none">
+            <div class="country-info__total-cases">
+                <span class="data-title">Total Cases:</span>
+                </br>
+                <span class="data-info"></span>
+            </div>
+            <div class="country-info__new-cases">
+                <span class="data-title">New Cases:</span>
+                </br>
+                <span class="data-info"></span>
+            </div>
+            <div class="country-info__total-deaths">
+                <span class="data-title">Total Deaths:</span>
+                </br>
+                <span class="data-info"></span>
+            </div>
+            <div class="country-info__new-deaths">
+                <span class="data-title">New Deaths:</span>
+                </br>
+                <span class="data-info"></span>
+            </div>
+            <div class="country-info__total-recovered">
+                <span class="data-title">Total Recovered:</span>
+                </br>
+                <span class="data-info"></span>
+            </div>
+            <div class="country-info__in-critical-condition">
+                <span class="data-title">In Critical Condition:</span>
+                </br>
+                <span class="data-info"></span>
+            </div>
+        </div>
+
+        <div class="flex container regions">
+            <button>Europe</button>
+            <button>Africa</button>
+            <button>Americas</button>
+            <button>Asia</button>
+            <button>Oceania</button>
+            <button>All Countries</button>
+        </div>
     
-    <script src="./script/countriesApiImplementation.js"></script>
+        <div class="flex container listOfCountries">
+        </div>
+    </main>
+
+    <script src="./script/countriesApi.js"></script>
+    <script src="./script/index.js"></script>
 </body>
 </html>

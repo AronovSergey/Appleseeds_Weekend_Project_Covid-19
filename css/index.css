@@ -1,0 +1,99 @@
+/* utilities */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.flex {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.display-none {
+    display: none;
+}
+
+
+
+/* Country Info Section */
+.country-info * {
+    width: 14vw;
+    min-width: 150px;
+    height: 120px;
+    background: #699985;
+    font-size: 20px;
+    line-height: 2rem;
+    font-weight: 400;
+    border-radius: 16px;
+    margin: 5px;
+    padding: 8px;
+    color: white;
+}
+
+h1 {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 6rem;
+    font-weight: 200;
+    margin: 20px;
+    text-decoration: underline;
+}
+
+
+
+.country-info *:last-child {
+    width: 18vw;
+}
+
+/* main section */
+main {
+    flex-direction: column;
+}
+
+main .regions  * {
+    width: 10vw;
+    min-width: 150px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 16px;
+    border: none;
+    background: #777;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+}
+
+main .regions *:hover {
+    background-color: #888;
+    border:  3px solid black;
+}
+
+main .listOfCountries * {
+    font-size: 22px;
+    background: white;
+    margin: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 6px;
+}
+
+main .listOfCountries *:hover {
+    border:  3px solid black;
+    padding: 3px;
+}
+
