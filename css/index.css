@@ -97,3 +97,10 @@ main .listOfCountries *:hover {
     padding: 3px;
 }
 
+
+/* Graph */
+main .graph {
+    width: 90vw;
+    height: 60vh;
+    margin-bottom: 10vh;
+}

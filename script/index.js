@@ -13,6 +13,9 @@ const totalDeaths = document.querySelector('.country-info__total-deaths').lastEl
 const newDeaths = document.querySelector('.country-info__new-deaths').lastElementChild;
 const totalRecovered = document.querySelector('.country-info__total-recovered').lastElementChild;
 const criticalCondition = document.querySelector('.country-info__in-critical-condition').lastElementChild;
+// chart.js
+const graph = document.querySelector('.graph');
+const ctx = document.getElementById('myChart').getContext('2d');
 
 
 /*---------------------------
@@ -25,9 +28,9 @@ const isFetched = {
     Americas: false,
     Asia: false,
     Oceania: false
-}
+};
 
-for(let i = 0; i < regionsButtons.length; i++){
+for(let i = 0; i < regionsButtons.length - 1; i++){
     regionsButtons[i].addEventListener('click', regionButtonHandler);
 };
 
@@ -42,9 +45,14 @@ async function regionButtonHandler() {
         await fetchRegionInfo(regionName);
     }
 
+    fillGraph(regionName);
+
+    drawGraph();
+
+
     createCountriesSection(regionName);
 
-} ;
+};
 
 async function fetchRegionInfo(region) {
     isFetched[region] = true;
@@ -70,7 +78,7 @@ async function fetchRegionInfo(region) {
     };
 
     regions[region] = newRegion;
-}
+};
 
 function createCountriesSection (region) {
     listOfCountries.innerHTML = "";
@@ -81,7 +89,7 @@ function createCountriesSection (region) {
         listOfCountries.appendChild(button);
         button.addEventListener('click', countryButtonHandler.bind(country));
     });
-}
+};
 
 
 /*-----------------------------
@@ -96,14 +104,69 @@ function countryButtonHandler() {
     totalRecovered.textContent = this.totalRecovered;
     criticalCondition.textContent = this.criticalCondition;
 
-    displayElement(countryInfo)
+    removeElement(graph);
+    displayElement(countryInfo);
 };
+
+function allCountriesHandler() {
+    
+}
 
 
 /*----------------------------
 ~~~~~~~Chart.js Section~~~~~~~ 
 ----------------------------*/
+let labels = [];
+let datasets = [];
+function drawGraph(){
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: datasets,
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+            },
+        }
+    });
+    displayElement(graph);
+};
 
+function fillGraph(region) {
+    labels = [];
+    datasets = [
+        newDataset('Confirmed Cases', 'rgba(255, 0, 0, 0.5)'),
+        newDataset('Number Of Deaths', 'rgba(0, 0, 0, 0.5)'),
+        newDataset('Number Of Recovered', 'rgba(0, 255, 0, 0.5)'),
+        newDataset('Number Of Critical Condition', 'rgba(0, 0, 255, 0.5)'),
+    ];
+
+    const countries = regions[region];
+
+    countries.forEach(country => {
+        labels.push(country.name);
+        datasets[0].data.push(country.totalCases);
+        datasets[1].data.push(country.totalDeaths);
+        datasets[2].data.push(country.totalRecovered);
+        datasets[3].data.push(country.criticalCondition);
+    });
+};
+function newDataset(label, color){
+    return {
+        label: label,
+        data:[],
+        backgroundColor: color,
+        borderColor: color,
+        pointRadius: 4,
+        pointHoverRadius: 15,
+        type: 'line',
+        hidden: true,
+        fill: false,
+    }
+}
 
 
 /*----------------------------
@@ -111,11 +174,8 @@ function countryButtonHandler() {
 ----------------------------*/
 function removeElement(element) {
     element.classList.add('display-none')
-}
+};
 
 function displayElement(element) {
     element.classList.remove('display-none');
-}
-
-
-
+};
