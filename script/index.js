@@ -33,7 +33,6 @@ for(let i = 0; i < regionsButtons.length; i++){
 
 async function regionButtonHandler() {
     const regionName = this.textContent;
-
     title.textContent = regionName;
     displayElement(title);
     removeElement(countryInfo);
@@ -43,9 +42,6 @@ async function regionButtonHandler() {
         await fetchRegionInfo(regionName);
     }
 
-    /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Creating Countries Section
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     createCountriesSection(regionName);
 
 } ;
@@ -104,6 +100,11 @@ function countryButtonHandler() {
 };
 
 
+/*----------------------------
+~~~~~~~Chart.js Section~~~~~~~ 
+----------------------------*/
+
+
 
 /*----------------------------
 ~~~~~~~Global Functions~~~~~~~ 
@@ -115,3 +116,6 @@ function removeElement(element) {
 function displayElement(element) {
     element.classList.remove('display-none');
 }
+
+
+
