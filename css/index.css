@@ -25,6 +25,10 @@ body {
     display: none;
 }
 
+.line {
+    border-top: 1px solid #666;
+}
+
 
 /* Country Info Section */
 .country-info * {
