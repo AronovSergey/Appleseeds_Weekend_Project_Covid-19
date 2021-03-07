@@ -53,6 +53,8 @@ async function regionButtonHandler() {
     drawGraph();
 
     createCountriesSection(regionName);
+
+    window.scrollTo(0, 0);
 };
 
 async function fetchRegionInfo(region) {
@@ -115,8 +117,9 @@ async function allCountriesHandler() {
 
     drawGraph();
 
-
     createCountriesSection('all');
+
+    window.scrollTo(0, 0);
 };
 
 
