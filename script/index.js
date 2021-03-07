@@ -146,7 +146,6 @@ function countryButtonHandler() {
 let labels = [];
 let datasets = [];
 function drawGraph(){
-    if (myChart) myChart.destroy();
     let myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -160,6 +159,7 @@ function drawGraph(){
             },
         }
     });
+    myChart.update();
     displayElement(graph);
 };
 
