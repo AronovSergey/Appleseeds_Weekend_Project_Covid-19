@@ -23,9 +23,7 @@ async function getAllCountries() {
             regions[country.region].push(country);
         else 
             regions[country.region] = [country];
-    });   
-
-    regions.all = [];
+    }); 
 
     loadingDone();
 }

@@ -96,27 +96,10 @@ function createCountriesSection (region) {
     });
 };
 
-
-/*-----------------------------
-~~~~~~~Countries Section~~~~~~~ 
------------------------------*/
-function countryButtonHandler() {
-    title.textContent = this.name;
-    totalCases.textContent = this.totalCases;
-    newCases.textContent = this.newCases;
-    totalDeaths.textContent = this.deaths;
-    newDeaths.textContent = this.newDeaths;
-    totalRecovered.textContent = this.totalRecovered;
-    criticalCondition.textContent = this.criticalCondition;
-
-    removeElement(graph);
-    displayElement(countryInfo);
-
-    window.scrollTo(0, 0);
-};
-
 async function allCountriesHandler() {
     const regionsNames = ['Europe', 'Africa', 'Americas', 'Asia', 'Oceania'];
+    regions.all = [];
+
     for (let i = 0; i < regionsNames.length; i++){
         if(!isFetched[regionsNames[i]])
             await fetchRegionInfo(regionsNames[i]);
@@ -134,6 +117,26 @@ async function allCountriesHandler() {
 
 
     createCountriesSection('all');
+};
+
+
+
+/*-----------------------------
+~~~~~~~Countries Section~~~~~~~ 
+-----------------------------*/
+function countryButtonHandler() {
+    title.textContent = this.name;
+    totalCases.textContent = this.totalCases;
+    newCases.textContent = this.newCases;
+    totalDeaths.textContent = this.deaths;
+    newDeaths.textContent = this.newDeaths;
+    totalRecovered.textContent = this.totalRecovered;
+    criticalCondition.textContent = this.criticalCondition;
+
+    removeElement(graph);
+    displayElement(countryInfo);
+
+    window.scrollTo(0, 0);
 };
 
 
